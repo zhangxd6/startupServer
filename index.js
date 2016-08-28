@@ -9,7 +9,17 @@ var dummyVender = {
     bio:'blablabla',
     phone:'2515555555',
     logo:'',
-    count:0
+    count:0,
+    vistors:[
+        {
+            name:'Georage Washington',
+            company:'The US LLC',
+            phone:2511001000,
+            email:'washing@us.llc',
+            timeOfVisit:'08/28/2016 12:00AM'
+        }
+    ]
+
 };
 
 
@@ -23,6 +33,13 @@ app.get('/',function(req,res){
 
 app.post('/vendo/:id',function(req,res){
     dummyVender.count++;
+    dummyVender.vistors.push( {
+            name:'Random vistors'+ dummyVender.count,
+            company:'The US LLC',
+            phone:2511001000,
+            email:'washing@us.llc',
+            timeOfVisit:new Date()
+        });
 
 });
 
@@ -31,6 +48,8 @@ app.get('/vendor/:id',function(req,res){
     debug(req.params);
     res.send(JSON.stringify(dummyVender));
 });
+
+
 
 
 app.listen(process.env.port||3000,function(){
