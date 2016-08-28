@@ -31,7 +31,7 @@ app.get('/',function(req,res){
 
 });
 
-app.post('/vendo/:id',function(req,res){
+app.post('/vendor/:id',function(req,res){
     dummyVender.count++;
     dummyVender.vistors.push( {
             name:'Random vistors'+ dummyVender.count,
@@ -40,7 +40,7 @@ app.post('/vendo/:id',function(req,res){
             email:'washing@us.llc',
             timeOfVisit:new Date()
         });
-
+    res.sendStatus(200);
 });
 
 app.get('/vendor/:id',function(req,res){
