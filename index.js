@@ -33,7 +33,7 @@ app.get('/',function(req,res){
 
 app.post('/vendor/:id',function(req,res){
 // Domain you wish to allow
-res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+res.setHeader('Access-Control-Allow-Origin', '*');
 
 // Request methods you wish to allow
 res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
@@ -50,7 +50,7 @@ res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
 
 app.get('/vendor/:id',function(req,res){
 // Domain you wish to allow
-res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+res.setHeader('Access-Control-Allow-Origin', '*');
 
 // Request methods you wish to allow
 res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
