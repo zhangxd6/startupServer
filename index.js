@@ -32,6 +32,11 @@ app.get('/',function(req,res){
 });
 
 app.post('/vendor/:id',function(req,res){
+// Domain you wish to allow
+res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+
+// Request methods you wish to allow
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     dummyVender.count++;
     dummyVender.vistors.push( {
             name:'Random vistors'+ dummyVender.count,
@@ -44,7 +49,11 @@ app.post('/vendor/:id',function(req,res){
 });
 
 app.get('/vendor/:id',function(req,res){
+// Domain you wish to allow
+res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
+// Request methods you wish to allow
+res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     debug(req.params);
     res.send(JSON.stringify(dummyVender));
 });
